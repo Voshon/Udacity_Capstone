@@ -1,0 +1,193 @@
+// .box{
+//   border: 2px solid red;
+//
+// }
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    width: 90%;
+    height: auto;
+    margin: auto;
+}
+.container {
+  height: auto;
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 100px 70%;
+  grid-template-areas:
+  "hd hd "
+  "mnar mnar";
+  grid-auto-flow: row;
+  padding-left: 280px;
+
+}
+
+.nav{
+  grid-area: hd;
+}
+
+.mainArea{
+  grid-area: mnar;
+  width:80%;
+  width: 100vh;
+  background: #lightblue;
+  display: grid;
+  grid-template-columns: minmax(.2fr,.5fr) minmax(.3fr, 5fr);
+  grid-template-rows: 50vh 50vh;
+  column-gap: 12px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "img info"
+    "finfo finfo";
+
+}
+
+.trip-image {
+  grid-area: img;
+  display: flex;
+  justify-content:center;
+  padding: 20px;
+  width:250px;
+  height: 200px;
+  overflow: hidden;
+}
+
+#city-img{
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.trip-info {
+  grid-area: info;
+  padding-top:10px;
+}
+
+.form-info {
+  grid-area: finfo;
+}
+
+.btn{
+    display: flex;
+    width: 200px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.btn-save {
+  background-color: white;
+  color: black;
+  height: 30px;
+  border: 2px solid #000;
+  margin-bottom: 10px;
+}
+
+.btn-save:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+.btn-remove {
+  background-color: #ffedee;
+  color: black;
+  height: 30px;
+  border: 2px solid #fff;
+  margin-bottom: 10px;
+}
+
+.btn-remove:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+.text-bold {
+    font-weight: bold;
+    margin-top: 0px;
+}
+
+.text-small {
+  font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+
+}
+
+
+#btn-trip-info {
+  background-color: #fff;
+  border: 1px solid black;
+  color: black;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+#btn-trip-info:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+.dataInput {
+    margin-bottom: 30px;
+}
+
+.inputStyle {
+    border-radius: 5px;
+    height: 20%;
+    border: solid 1px grey;
+    padding: 5px;
+}
+
+
+@media screen and (max-width: 768px) {
+
+  .container {
+    width:auto;
+    height:auto;
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 70%;
+      grid-template-areas:
+      "heading"
+      "mainArea ";
+
+
+  }
+
+  .mainArea{
+    grid-area: mnar;
+    width:auto;
+    height:auto;
+    background: #ffedee;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "img"
+      "info"
+      "finfo";
+    column-gap: 12px;
+    padding-bottom: 10px;
+    grid-auto-flow: row;
+    justify-content: center;
+
+  }
+
+  .trip-info {
+    grid-area: info;
+    padding-top:10px;
+  }
+
+  .trip-image {
+    display: flex;
+    justify-content:center;
+    overflow:hidden;
+    width:80%;
+    height: 300px;
+  }
+}

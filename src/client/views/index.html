@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Travel Management</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,900&display=swap" rel="stylesheet">
+
+    </head>
+
+    <body>
+      <div class="container">
+        <header class="nav box">
+          <h1>Travel Management</h1>
+        </header>
+
+        <main class="mainArea box">
+          <div class="trip-image box">
+            <img id="city-img" src="https://images.pexels.com/photos/450441/pexels-photo-450441.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260">
+          </div>
+          <div class="trip-info box">
+            <p class="text-bold">My trip to: <span id="departingLocation">London,England</span></p>
+            <p class="text-bold">Departing: <span id="departingDate">20/06/2020</span></p>
+            <div class="btn">
+                <button class="btn-save">Save trip</button>
+                <button id="removeTripButton" class="btn-remove">Cancel trip</button>
+            </div>
+            <p class="text-bold">Length of Trip: <span id="tripLength"></span></p>
+            <p class="text-small"><span id="mainLocation">London,England</span> is <span id="timeSpan">30 days left</span></p>
+            <p class="text-small">Weather assumption:</p>
+            <p class="text-small"><small>High: <span id="high">42</span>, Low: <span id="low">37</span></small></p>
+            <p class="text-small"><small id="summary">Rainy Day</small></p>
+          </div>
+
+          <div class="form-info">
+             <div class="cityInput">
+                 <div class="dataInput">
+                     <span class="text-bold">To:</span>
+                     <input type="text" id="place" placeholder="London" class="inputStyle"/>
+                 </div>
+                 <div class="dataInput">
+                     <span class="text-bold">Departing:</span>
+                     <input type="text" id="date" placeholder="MM/DD/YYYY" class="inputStyle"/>
+                 </div>
+                 <div class="dataInput">
+                     <span class="text-bold">End:</span>
+                     <input type="text" id="endDate" placeholder="MM/DD/YYYY" class="inputStyle"/>
+                 </div>
+
+                 <input id="btn-trip-info" type="submit" name="Get Weather Information" value="Get Trip Info" onclick="return Client.handleSearch(event)" onsubmit="return Client.handleSearch(event)">
+             </div>
+           </div>
+
+        </main>
+
+
+      </div>
+
+      <script>
+        window.addEventListener('load', () => {
+        document.getElementById('removeTripButton').addEventListener('click', () => Client.buttonHandler());
+        });
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js');
+        });
+        }
+      </script>
+
+      </body>
+</html>
