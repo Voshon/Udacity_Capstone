@@ -6,7 +6,7 @@ import './styles/style.scss'
 
 import img_demo from './media/cat1.jpg';
 
-const demoData = [
+const dt = [
   {theSummary:"Possible Light Rain",
    theLow:"42.32",
    theHigh:"57.85",
@@ -18,10 +18,10 @@ const demoData = [
    theSummar: "Rainy Day."
  }]
 
-let remBtn = document.querySelector('.btn-remove');
-remBtn.addEventListener('click', () => {
+let rem = document.querySelector('.btn-remove');
+rem.addEventListener('click', () => {
   remBtn.textContent = 'removed'
-  view_prev(demoData)
+  view_prev(dt)
 }, false)
 
 
